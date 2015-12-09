@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>YAVPやガイドの書き方 | 愉快な死体置き場</title>
+  <meta name="author" content="liarnose">
+  
+  <meta name="description" content="DCSS死亡記録とかの話をするぶろぐ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="YAVPやガイドの書き方"/>
+  <meta property="og:site_name" content="愉快な死体置き場"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="愉快な死体置き場" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">愉快な死体置き場</a></h1>
+  <h2><a href="/">Pantastic Morgue</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-12-08T15:00:00.000Z"><a href="/2015/12/09/ndefinedyavp/">2015-12-09</a></time>
+      
+      
+  
+    <h1 class="title">YAVPやガイドの書き方</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>この記事はRoguelike Advent Calendar 2015の8日目です。</p>
+<hr>
+<p>ローグライクゲームの若干偏った楽しみ方に「wikiに記事を書く」というのがあります。</p>
+<p>特にクリア報告（海外フォーラムだとYAVP:Yet Another Victory Postと呼ばれてることが多い）や、特定ビルドに特化した割と主観混じりにならざるを得ないようなガイド記事は、データを網羅したりソースコード見ないと分からないようなとこまで突っ込んで解析する必要が無いため気軽に書ける割に<del>承認欲求が満たされまくって脳内物質がドッバドバ出るので</del>ゲームのコミュニティを賑わせてやった！という実感を得やすいのオススメです。</p>
+<p>プレイログをupしたり新しい戦法を提言したりするのはSLGや対戦ゲーのwiki全般にある文化なのですが、それらと比べて個人競技の趣向が強いローグライクはプレイスキルがイマイチでも視点次第で面白いものが書ける点でゲームwiki編集への入門としても優れていると言えるのではないでしょうか。</p>
+<p>という訳で今回は「wikiにYAVPやビルドガイドを書いてみよう」というお題でひとつまとめてみようと思います。</p>
+<h1 id="手順1ゲームの目星を付ける">手順1　ゲームの目星を付ける</h1>
+<p>とりあえず私が記事を投稿したことのある日本語のローグライクwikiは以下の2つです。</p>
+<ul>
+<li>Dungeon Crawl Stone Soup <a href="http://mars.kmc.gr.jp/~dis/dcss_wiki/" target="_blank" rel="external">石鍋Wiki</a></li>
+<li>Tales of Maj’Eyal <a href="http://wikiwiki.jp/tome4/" target="_blank" rel="external">tome4 日本語スポイラー Wiki</a></li>
+</ul>
+<p>他は<a href="http://dwarffortress.if.land.to/?FrontPage" target="_blank" rel="external">Dwarf Fortressウィキ</a>なんかも需要はありそうですね。</p>
+<p>WaywardやCataclysm:DDAやGearHeadも日本語wikiはあるんですがスポイラーwikiとしての側面が強くてちょっと対象外となりそうです。</p>
+<p>後は*band系もガイドは個人サイトが多いですねえ。東方勝手版とか流行ってるから誰かオープンのwiki立てたらいいんじゃないかしら。</p>
+<h1 id="手順2ビルドプレイスタイルの目星を付ける">手順2　ビルド・プレイスタイルの目星を付ける</h1>
+<p>既にガイドのあるようなビルドについて新たにページを用意するのはwikiの保守上の観点からも避けたい所です。既存記事の補足を書くという方針も無くは無いですがまっさらな所から書いた方がおおむね楽です。</p>
+<p>上記の2wikiだとミノファイターオカワルとかオーガアルケミストみたいな低難度ド安定ビルドの解説が意外と充実してないので、ただ単に初クリアを目指すというだけでもネタになり得ます。気負わず選びましょう。</p>
+<h1 id="手順3プレイする">手順3　プレイする</h1>
+<p>YAVPなら1回クリアでOKなのでゲームを楽しみましょう。ビルドガイドは私の場合2-3回似たようなビルドでクリアしてから書くようにしていますが、ここは人それぞれのようです。1回クリアまでに屍を積み上げているなら十分な知見が得られてるはずですねー。</p>
+<p>難易度に関してはチートが入らない程度に最低難易度で十分だと思います。DCSSなら3ルーンクリア、tome4ならNormal/Adventureの腕前でwikiに記事書いてますが怒られたことはないです。</p>
+<p>普段のプレイと変わるのは、記事にすることを見据えて簡単にでもメモを取っておくこととあんまりにも再現性のない運頼みのプレイを避けることです。</p>
+<h1 id="手順4下書きする">手順4　下書きする</h1>
+<p>wiki記法を書き慣れていないとどうしてもここで手間取ります。</p>
+<p>基本的には「YAVP・ガイドへのリンクページの編集」と「ページ新規作成」だけするようにすれば致命的な失敗は避けられるはずですが、自信がなければ自分で適当にフリーのレンタルwikiを一個作ってその中で色々試してみることをオススメします。</p>
+<p>あとうっかり編集途中で消えるとげんなりするので入力はブラウザ上ではなくローカルのテキストエディタでやってコピペするようにしましょう。</p>
+<h2 id="記事の中身">記事の中身</h2>
+<dl>
+<dt>ページタイトル</dt>
+<dd>wikiメニューからページの一覧を見て他のガイドページの命名規則に従います。（接頭辞、ビルドの表記法など）
+</dd>
+<dt>バージョン</dt>
+<dd>ゲームバージョンによって内容が大きく変わるのがザラなので記事のどっかには入れておきましょう。
+</dd>
+<dt>概要</dt>
+<dd>どんなキャラメイクをするのか、どんなコンセプトなのかなどを簡単にまとめて最初に書くとよいです。
+</dd>
+<dt>本文</dt>
+<dd>全部書こうとせずに他のプレイとどのような点が異なるのか、という点を抜き出すことを心がけます。 文体はあんまりおちゃらけてなければですます調でもだである調でも構いません。
+</dd>
+<dt>用語</dt>
+<dd>略語やジャーゴンは使ってもいいですが記事中最初に出てくる所に注釈を入れるか詳しい説明にリンクを貼りましょう。 あとあんまり表記ゆれがあると不親切なので記事内では用語を統一するよう気をつけましょう。
+</dd>
+<dt>コメント</dt>
+<dd>wikiには大体コメント機能を追加するためのプラグインがあるので適当に調べて記事の最下部に貼っつけます。
+</dd>
+</dl>
+<h1 id="手順5記事をwikiに投稿する">手順5　記事をwikiに投稿する</h1>
+<p>手順4で書いた記事をwikiに投稿し、適宜リンクページに項目を追加します。</p>
+<p>一通り読みなおして思った通りの表示でなかったり誤字のある所を修正して完成です。</p>
+<hr>
+<p>多分一番のハードルはwikiを編集するって所だと思うんですが、wiki自体便利なツールではあるのでこういう遊びの場で触り方を知っておくのはそれなりのプラスのはずです。</p>
+<p>そんなわけでレッツYAVP！</p>
+<p>次の@dplusplus氏の「LLD(石鍋試験鯖)の内側」も既に投稿されてますね。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/advent-calendar/">advent calendar</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-565d769d64788188"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="search">
+    <input type="hidden" name="q" value="site:liarnose.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Ashenzari/">Ashenzari</a><small>1</small></li>
+  
+    <li><a href="/tags/Berserker/">Berserker</a><small>1</small></li>
+  
+    <li><a href="/tags/Centaur/">Centaur</a><small>1</small></li>
+  
+    <li><a href="/tags/Conjurer/">Conjurer</a><small>3</small></li>
+  
+    <li><a href="/tags/DCSS/">DCSS</a><small>8</small></li>
+  
+    <li><a href="/tags/DemonSpawn/">DemonSpawn</a><small>1</small></li>
+  
+    <li><a href="/tags/Fighter/">Fighter</a><small>1</small></li>
+  
+    <li><a href="/tags/FireElementalist/">FireElementalist</a><small>1</small></li>
+  
+    <li><a href="/tags/Formicid/">Formicid</a><small>1</small></li>
+  
+    <li><a href="/tags/Gargoyle/">Gargoyle</a><small>3</small></li>
+  
+    <li><a href="/tags/Gladiator/">Gladiator</a><small>1</small></li>
+  
+    <li><a href="/tags/Gozag/">Gozag</a><small>1</small></li>
+  
+    <li><a href="/tags/Naga/">Naga</a><small>1</small></li>
+  
+    <li><a href="/tags/Necromancer/">Necromancer</a><small>1</small></li>
+  
+    <li><a href="/tags/Qazlal/">Qazlal</a><small>1</small></li>
+  
+    <li><a href="/tags/Ru/">Ru</a><small>4</small></li>
+  
+    <li><a href="/tags/Summoner/">Summoner</a><small>1</small></li>
+  
+    <li><a href="/tags/Trog/">Trog</a><small>1</small></li>
+  
+    <li><a href="/tags/VineStalker/">VineStalker</a><small>2</small></li>
+  
+    <li><a href="/tags/Winning/">Winning</a><small>3</small></li>
+  
+    <li><a href="/tags/Yredelemnul/">Yredelemnul</a><small>1</small></li>
+  
+    <li><a href="/tags/advent-calendar/">advent calendar</a><small>4</small></li>
+  
+    <li><a href="/tags/brawler/">brawler</a><small>1</small></li>
+  
+    <li><a href="/tags/dcss/">dcss</a><small>1</small></li>
+  
+    <li><a href="/tags/ghoul/">ghoul</a><small>1</small></li>
+  
+    <li><a href="/tags/hoge/">hoge</a><small>1</small></li>
+  
+    <li><a href="/tags/tactical-chronicle/">tactical chronicle</a><small>5</small></li>
+  
+    <li><a href="/tags/test/">test</a><small>1</small></li>
+  
+    <li><a href="/tags/tome4/">tome4</a><small>1</small></li>
+  
+    <li><a href="/tags/trpg/">trpg</a><small>3</small></li>
+  
+    <li><a href="/tags/嘘つきジニーと磔刑の国/">嘘つきジニーと磔刑の国</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 liarnose
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
