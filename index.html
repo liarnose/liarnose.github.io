@@ -62,6 +62,105 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-12-01T15:00:00.000Z"><a href="/2017/12/02/css-pub-past/">2017-12-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/12/02/css-pub-past/">CSS組版に流れ着くまでのあらすじ</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>この記事は、<a href="https://qiita.com/advent-calendar/2017/tech-fanbook" target="_blank" rel="external">技術系同人誌 Advent Calendar 2017</a>の第2日目の記事として書かれました。</p>
+<hr>
+<h1 id="まえがき">まえがき</h1>
+<p>拙作<a href="https://www.dropbox.com/s/3ft8wbgkqos2t0d/unseen.pdf" target="_blank" rel="external">「見えざる埋蔵金」</a>の公開以降、某社に拾われたりバイト掛け持ちとか色々が重なってしんどくてバックレたり全くの別業種に就職したりそこを4ヶ月で辞めたりして今は職業訓練とハロワ通いをする身でして、お出しできるようなCSS組版の成果物はなんも無いのですが、その間いくつかCSS組版で本を書く個人プロジェクトを頓挫させたりしていくらか知見が溜まってきたのでアドベントカレンダーに便乗して時系列順でまとめていこうと思います。思い出話とかものすごニッチな適用例とかが主成分でポがエムってしまっているのでqiitaではなく個人ブログでやっていきます。</p>
+<blockquote>
+<p>これ技術系同人誌ではなく同人誌系技術の話になってしまうけどこのカレンダーで良かったのか。怒られたらそのとき取り下げるか。</p>
+</blockquote>
+<h1 id="出会いはアットウィキ">出会いはアットウィキ</h1>
+<p>私がHTML/CSSを使って印刷データを作る、という流れに興味を持ったのは大学・大学院時代にレポート作業で少しでも手を抜くことを考えていたことに起因してます。当時の要件としては、</p>
+<ul>
+<li>作業環境がブラウザベースorすぐ作れる(デスクトップ機メインだったので環境を持ち運べなかった)</li>
+<li>pdfが吐ける</li>
+<li>レイアウトがいじれる(スカスカのレイアウトを組んで少しでもレポート枚数を稼ぐため)</li>
+</ul>
+<p>といったあたりが高優先度でした。</p>
+<p>当時は最終的に<a href="https://cloudlatex.io" target="_blank" rel="external">Cloud LaTeX</a>を選んだのだけど、ツールを探す中で光るものを感じたのが、<a href="https://atwiki.jp" target="_blank" rel="external">アットウィキ</a>のpdf化機能でした。</p>
+<p>LaTeXと違って補完機能が充実してなくてもwiki記法でザクっと本文を書ける。まあ読めなくはないレベルのpdfを出してくれる。画像アップロードも組み込みの表もある。ネット環境さえあればどこでも編集可能。ネット環境があるからコンビニのコピー機にデータ送って印刷可能。</p>
+<p>レイアウトをいじれない点がマイナスで上記の通り最終的に選ぶことはなかったのですが、<strong>軽量マークアップ言語から印刷用pdfを作る</strong>というコンセプトの存在はここで知ることとなったのです。</p>
+<blockquote>
+<p>アットウィキのpdf化機能、今はなくなっちゃったみたい。残念！</p>
+</blockquote>
+<h1 id="trpg病">TRPG病</h1>
+<p>私にとって<strong>「文書の印刷データを可能な限り手抜きで作りたい！」</strong>という欲求がレポート作成から来たものであるならば、<strong>「ややこしくって細かくてリッチなレイアウトを生成したい！」</strong>という欲求はTRPGから来たものでした。TRPGerのうち一定数は「自分の書いたリプレイやらデータ集やらシナリオやらの文書を公開・頒布したい」という病気に罹患しており治療方法は存在しません。そしてTRPG文書は諸般の事情によりややこしくって細かくてリッチなレイアウトを要求するものなのです。</p>
+<h2 id="ややこしい">ややこしい</h2>
+<p><a href="http://paizo.com/pathfinderRPG/prd/" target="_blank" rel="external">Pathfinder Reference Document</a>とか<a href="http://grancrest.jp/play/" target="_blank" rel="external">グランクレストRPGコアルール</a>とかを見ていただければ明白なのですが、TRPG文書は独自のデータブロック(カタログ組版で言うところのスペック表とかに近い)を多用します。比較的オーソドックスな小説風のレイアウトが通じるはずのリプレイ文書もト書きが必須でこれが意外とままならない。</p>
+<h2 id="細かい">細かい</h2>
+<p>商業のTRPG書籍に特徴的なのですが、コンテンツの製作に人件費がめっちゃかかるジャンルであるためかページを切り詰め切り詰め単価を下げることに血道をあげている場合がよくあります。極端な例だと索引を取っ払ってしまったり、縦書きの本の本文がゴリゴリのツメ組みだったり。趣味でやるならそこまでシビアに切り詰める必要はないのですがデータブロックなど公式のフォーマットを踏襲した方が良い部分もあるため細かく詰めたレイアウトがしたくなります。</p>
+<h2 id="リッチ">リッチ</h2>
+<p>TRPGはゲームなのでビジュアルも大事です。ごりっごりに背景画像を利用してフォントも凝ったのを色々ぶち込んでいきたい所です。電子媒体で頒布するならルール用語などのキーワードには自動でリンクを張って欲しいし、データ部分にはバーチャルテーブルトップなどの外部ツールと何らかの連携機能が用意できたりすると未来な感じでいいですね。欲望が際限なく広がります。</p>
+<h1 id="そして敗北">そして敗北</h1>
+<p>上記のような無茶な欲求に対して私はさまざまなアプローチを試み、そして敗北を重ねました。一応LaTeXでPathfinderRPGのモンスターデータを成型してセッションに持っていったりはしたけどもちょっとしんどかった。</p>
+<blockquote>
+<p>モンスターデータ.texについては別のアドベントカレンダーで詳しい話をします。</p>
+</blockquote>
+<p>何がつらいってLaTeXはなんでもできる代わりに表現がえらく冗長なのですよ。細かいデータブロックを成型したり背景画像を設定したりハシラ・ランニングヘッダを凝った見た目にしたりがいちいちややこしい。プラグインの仕組みが上手く整理されてるわけでもないしそれらを網羅的に調べる方法も乏しい。ちょうどリアルタイムプレビュー付きのTeXエディタが流行り始めてたんだけどそれでもCSS書くのに比べたら開発ツール群が弱い。出てくる単語がお前はJavaのプロジェクト内のクラスかってくらい長い。打ちづらい。補完しても合ってるのか一目でわからない。</p>
+<p>こうして私は<strong>「ややこしくって細かくてリッチなレイアウトを生成したいけどLaTeX書くのはクソめんどくさいから絶対ヤダ！」</strong>というワガママ極まりない欲求を持つことになったのです。</p>
+<h1 id="scriptogr.amよ永遠なれ">Scriptogr.amよ永遠なれ</h1>
+<p>ここでちょっとレイヤーを文書作成の方に戻して軽量マークアップ言語の話をします。時系列順で言うと私がMarkdownに出会ったのはLaTeXに辟易したよりも後だからです。</p>
+<p>私とMarkdownの最初の出会いは多分twitterにおいてだったと思います。「なんか最近この単語よく見るな」という程度ですが。当初は卒論のメモ書き用に「平文textに適用できる文書の成型ルール」として使っていたのですが、便利なツールとして認識したのはScriptogr.amを使いだしたのがきっかけです。</p>
+<p>Scriptogr.amはDropbox内に上げた.mdファイルをいい感じに変換してブログとして表示してくれるサービスで、ちょうど静的サイトジェネレータでブログをやる時のめんどくさい所を全部やってくれるというのに似た働きをします。現に私のScriptogr.amのサービス終了後の引っ越し先はHexo + Github Pagesでした。WP立てるのに比べればずいぶんマシとは言えこれも結構めんどくさかった。</p>
+<p>結局長くは持たなかったのですがScriptogr.amは私の性に合ったサービスでした。なんかしらMarkdownで書いてDropboxの中に放り込むだけでブログができる。スタブはDropboxの別なとこに置いとけばいいし、誤字修正なんかもDropbox内の.mdファイルを触れればどこからでもできるのでお手軽です。</p>
+<p><strong>「Markdownはhtmlに変換するのが簡単」</strong>、<strong>「どうしても必要になったらhtmlタグを使えばいい」</strong>というのもMarkdownを理解する助けになりました。私は中坊のころからhtmlに触れていたので文書構造をそっちに対応させて考えられるのは大変都合がよかったのです。</p>
+<h2 id="ちなみに">ちなみに</h2>
+<p>Markdown→LaTeXをやらなかったのは当時LaTeX環境をCloud LaTeXに完全に頼っておりPandoc等と連携さすのがめんどくさかったからです。あと学術用途でどうせ数式にはTeX書式を使うことを考えるとMarkdownで書くことに大してうま味がなかった。</p>
+<h1 id="なんとなくゴールができた">なんとなくゴールができた</h1>
+<p>時系列は前後するものの、ここまでで私は<strong>「Markdownはhtmlに変換するのが簡単」</strong>、<strong>「軽量マークアップ言語からのpdf生成は便利だ」</strong>、<strong>「リッチなレイアウトをLaTeXを使わずに実現したい」</strong>というパーツを得ました。そして折しもこれらをつなぐアイデアがちょうどWebで見かけられるようになってきていました。このエントリの本題、<strong>CSS組版</strong>です。</p>
+<p>つまり「Markdownで原稿を作成し何らかのイージーな手段でhtmlに変換、その見た目はcssで作ってやり、出来上がったHTML/CSS文書を何らかの方法でpdfにして吐き出す」というワークフローが自家で実現可能になりつつあり、それはおそらく自分にとって便利なツールになるであろうと予想ができるものだったのです。</p>
+<h1 id="求めよさらば与えられん">求めよ、さらば与えられん</h1>
+<p>目的がはっきりしたので私は今手元に足りないパーツを探すことにしました。</p>
+<p>まずMarkdownパーサですが当時はオプションの豊富さから言って<a href="https://pandoc.org/" target="_blank" rel="external">Pandoc</a>一択でした。他のMarkdownパーサには「ヘッダで区切ってコンテナdivなりsectionなりで囲う」といった機能がなかったからです。</p>
+<blockquote>
+<p>今なら<a href="https://github.com/arve0/markdown-it-header-sections" target="_blank" rel="external">markdown-it-header-sections</a>とかPandocに追随するような形で揃ってきてるよ</p>
+</blockquote>
+<p>次にpdf化についてですが、このコンセプトにたどり着いた当初私は「CSS組版」という言葉は知らなかったため「htmlのpdf化」といったキーワードで情報収集をし、<a href="https://wkhtmltopdf.org/" target="_blank" rel="external">wkhtmltopdf</a>や<a href="http://sorotokin.com/adaptive-layout/" target="_blank" rel="external">Adaptive Layout</a>といったツールを見つけ手応えを感じました。そして最終的に<a href="http://vivliostyle.com/ja/" target="_blank" rel="external">Vivliostyle</a>のアルファ版に辿り着いたのです。</p>
+<p>ついでにビルドツールとして大流行してたので<a href="https://gulpjs.com/" target="_blank" rel="external">gulp</a>も触り始めました。</p>
+<h1 id="でけた">でけた</h1>
+<ul>
+<li>Adobe Brackets: エディタ。いい加減<a href="http://www.hi-ho.ne.jp/jun_miura/jmedit.htm" target="_blank" rel="external">JmEditor</a>を卒業した方がいい気がしたので。</li>
+<li>Markdown: 軽量マークアップ言語。本文作成。</li>
+<li>Pandoc: 汎用ドキュメント変換ツール。Markdown -&gt; html。</li>
+<li>gulp: ビルドツール。とりあえず.mdをwatchしてPandoc走らすとこまで。</li>
+<li>Chrome DevTools: F12。主にvivilostyleの当たってない状態で使う。</li>
+<li>vivliostyle.js: CSS組版ツール。当時はChrome Extension版を利用。</li>
+<li>Chrome: pdf出力。背景画像も対応していてフォントも埋め込んでくれるのでえらい。</li>
+</ul>
+<p>これらのツールを組み合わせることで私はMarkdownからhtmlを経由してpdfを吐かせるワークフローを構築し「見えざる埋蔵金」を公開することができたのです。</p>
+<p>長くなったので「見えざる埋蔵金」の時にできたこの環境については別にエントリ立てて書いていきます。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-12-16T15:00:00.000Z"><a href="/2015/12/17/ndefinedretire-1/">2015-12-17</a></time>
       
       
@@ -657,60 +756,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-08-04T10:51:42.000Z"><a href="/2015/08/04/ndefinedtac-chro-2/">2015-08-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/08/04/ndefinedtac-chro-2/">tactical chronicle 討伐の手引き その2</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="黒の守護精">黒の守護精</h2>
-<p>村レベル32で撃破。</p>
-<ul>
-<li>黒魔術師</li>
-<li>黒魔術師</li>
-<li>タコ魔術師</li>
-<li>盗賊</li>
-<li>海賊</li>
-</ul>
-<p>強化バーニングアックス持ちの海賊が八本足でダメージと沈黙付与を兼業。</p>
-<p>念のためタコ魔術師にクリスタルミラー使わせてたけどこのレベルなら耐性とHP上げて耐える方針でもいけると思う。光150%なので白魔術師とか守護とか入れておくといい仕事するのでは。</p>
-<h2 id="太古の剣聖">太古の剣聖</h2>
-<p>村レベル33で撃破。</p>
-<ul>
-<li>白魔術師</li>
-<li>白魔術師</li>
-<li>海賊</li>
-<li>学者</li>
-<li>守護</li>
-</ul>
-<p>暗闇の斧装備の海賊が以下略。さらに守護が後衛への攻撃をシャットアウト。学者でMPを供給しつつつ全員で協力してHPを削り切る。</p>
-<p>場所の関係上十三時計で死なない前衛が用意できればあとは白魔が嫌というほどサポートしてくれるので攻略法は色々ありそう。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -774,7 +819,7 @@
   
     <li><a href="/tags/Yredelemnul/">Yredelemnul</a><small>1</small></li>
   
-    <li><a href="/tags/advent-calendar/">advent calendar</a><small>5</small></li>
+    <li><a href="/tags/advent-calendar/">advent calendar</a><small>6</small></li>
   
     <li><a href="/tags/brawler/">brawler</a><small>1</small></li>
   
